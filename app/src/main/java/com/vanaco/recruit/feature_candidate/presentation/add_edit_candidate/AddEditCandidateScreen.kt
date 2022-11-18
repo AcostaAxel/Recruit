@@ -34,6 +34,7 @@ fun AddEditCandidateScreen(
     viewModel: AddEditCandidateViewModel = hiltViewModel()
 ) {
     val nameState = viewModel.candidateName.value
+    val jobTitleState = viewModel.candidateJobTitle.value
     val contactState = viewModel.candidateContact.value
     val languagesState = viewModel.candidateLanguages.value
     val salaryState = viewModel.candidateSalary.value
@@ -132,6 +133,21 @@ fun AddEditCandidateScreen(
                 singleLine = true,
                 textStyle = MaterialTheme.typography.h4
             )
+
+            Spacer(modifier = Modifier.height(26.dp))
+            TransparentHintTextField(
+                text = jobTitleState.text,
+                hint = jobTitleState.hint,
+                onValueChange = {
+                    viewModel.onEvent(AddEditCandidateEvent.EnteredJobTitle(it))
+                },
+                onFocusChange = {
+                    viewModel.onEvent(AddEditCandidateEvent.ChangeJobTitleFocus(it))
+                },
+                isHintVisible = jobTitleState.isHintVisible,
+                textStyle = MaterialTheme.typography.h5
+            )
+
             Spacer(modifier = Modifier.height(26.dp))
             TransparentHintTextField(
                 text = contactState.text,

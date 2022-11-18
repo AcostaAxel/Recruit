@@ -6,6 +6,9 @@ sealed class AddEditCandidateEvent {
     data class EnteredName(val value: String): AddEditCandidateEvent()
     data class ChangeNameFocus(val focusState: FocusState): AddEditCandidateEvent()
 
+    data class EnteredJobTitle(val value: String): AddEditCandidateEvent()
+    data class ChangeJobTitleFocus(val focusState: FocusState): AddEditCandidateEvent()
+
     data class EnteredContact(val value: String): AddEditCandidateEvent()
     data class ChangeContactFocus(val focusState: FocusState): AddEditCandidateEvent()
 

@@ -13,6 +13,9 @@ class AddCandidateUseCase(
         if (candidate.name.isBlank()) {
             throw InvalidCandidateException("The name of the candidate can´t be empty")
         }
+        if (candidate.jobTitle.isBlank()) {
+            throw InvalidCandidateException("Job Title of the candidate can´t be empty")
+        }
         if (candidate.contact.isBlank()) {
             throw InvalidCandidateException("Contact of the candidate can´t be empty")
         }

@@ -28,6 +28,13 @@ class AddEditCandidateViewModel @Inject constructor(
     )
     val candidateName: State<CandidateTextFieldState> = _candidateName
 
+    private val _candidateJobTitle = mutableStateOf(
+        CandidateTextFieldState(
+            hint = "Job Title"
+        )
+    )
+    val candidateJobTitle: State<CandidateTextFieldState> = _candidateJobTitle
+
     private val _candidateContact = mutableStateOf(
         CandidateTextFieldState(
             hint = "Contact"
@@ -81,6 +88,10 @@ class AddEditCandidateViewModel @Inject constructor(
                             text = candidate.name,
                             isHintVisible = false
                         )
+                        _candidateJobTitle.value = _candidateJobTitle.value.copy(
+                            text = candidate.jobTitle,
+                            isHintVisible = false
+                        )
                         _candidateContact.value = _candidateContact.value.copy(
                             text = candidate.contact,
                             isHintVisible = false
@@ -119,6 +130,17 @@ class AddEditCandidateViewModel @Inject constructor(
                 _candidateName.value = candidateName.value.copy(
                     isHintVisible = !event.focusState.isFocused &&
                             candidateName.value.text.isBlank()
+                )
+            }
+            is AddEditCandidateEvent.EnteredJobTitle -> {
+                _candidateJobTitle.value = _candidateJobTitle.value.copy(
+                    text = event.value
+                )
+            }
+            is AddEditCandidateEvent.ChangeJobTitleFocus -> {
+                _candidateJobTitle.value = _candidateJobTitle.value.copy(
+                    isHintVisible = !event.focusState.isFocused &&
+                            candidateJobTitle.value.text.isBlank()
                 )
             }
             is AddEditCandidateEvent.EnteredContact -> {
@@ -185,6 +207,7 @@ class AddEditCandidateViewModel @Inject constructor(
                         candidateUseCases.addCandidateUseCase(
                             Candidate(
                                 name = candidateName.value.text,
+                                jobTitle = candidateJobTitle.value.text,
                                 contact = candidateContact.value.text,
                                 languages = candidateLanguages.value.text,
                                 salary = candidateSalary.value.text,

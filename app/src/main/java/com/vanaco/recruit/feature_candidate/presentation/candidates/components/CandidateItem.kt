@@ -73,7 +73,7 @@ fun CandidateItem(
             )
             Spacer(modifier = Modifier.height(0.5.dp))
             Text(
-                text = candidate.contact,
+                text = candidate.jobTitle,
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.onSurface,
                 maxLines = 1,
@@ -81,13 +81,12 @@ fun CandidateItem(
             )
             Spacer(modifier = Modifier.height(0.5.dp))
             Text(
-                text = candidate.languages,
+                text = candidate.contact,
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.onSurface,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
-
         }
         IconButton(
             onClick = onDeleteClick,
