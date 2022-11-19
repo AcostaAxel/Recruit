@@ -119,7 +119,8 @@ fun AddEditCandidateScreen(
                     )
                 }
             }
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(26.dp))
+            Text(text = "Name:", color = Color.DarkGray)
             TransparentHintTextField(
                 text = nameState.text,
                 hint = nameState.hint,
@@ -133,8 +134,8 @@ fun AddEditCandidateScreen(
                 singleLine = true,
                 textStyle = MaterialTheme.typography.h4
             )
-
-            Spacer(modifier = Modifier.height(26.dp))
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(text = "Job Title:", color = Color.DarkGray)
             TransparentHintTextField(
                 text = jobTitleState.text,
                 hint = jobTitleState.hint,
@@ -147,8 +148,8 @@ fun AddEditCandidateScreen(
                 isHintVisible = jobTitleState.isHintVisible,
                 textStyle = MaterialTheme.typography.h5
             )
-
-            Spacer(modifier = Modifier.height(26.dp))
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(text = "Contact:", color = Color.DarkGray)
             TransparentHintTextField(
                 text = contactState.text,
                 hint = contactState.hint,
@@ -161,7 +162,8 @@ fun AddEditCandidateScreen(
                 isHintVisible = contactState.isHintVisible,
                 textStyle = MaterialTheme.typography.h5
             )
-            Spacer(modifier = Modifier.height(26.dp))
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(text = "Languages:", color = Color.DarkGray)
             TransparentHintTextField(
                 text = languagesState.text,
                 hint = languagesState.hint,
@@ -174,7 +176,8 @@ fun AddEditCandidateScreen(
                 isHintVisible = languagesState.isHintVisible,
                 textStyle = MaterialTheme.typography.h5
             )
-            Spacer(modifier = Modifier.height(26.dp))
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(text = "Salary:", color = Color.DarkGray)
             TransparentHintTextField(
                 text = salaryState.text,
                 hint = salaryState.hint,
@@ -187,7 +190,8 @@ fun AddEditCandidateScreen(
                 isHintVisible = salaryState.isHintVisible,
                 textStyle = MaterialTheme.typography.h5
             )
-            Spacer(modifier = Modifier.height(26.dp))
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(text = "Comments:", color = Color.DarkGray)
             TransparentHintTextField(
                 text = commentsState.text,
                 hint = commentsState.hint,
@@ -200,7 +204,8 @@ fun AddEditCandidateScreen(
                 isHintVisible = commentsState.isHintVisible,
                 textStyle = MaterialTheme.typography.h5
             )
-            Spacer(modifier = Modifier.height(26.dp))
+            Spacer(modifier = Modifier.height(15.dp))
+            Text(text = "Offer:", color = Color.DarkGray)
             TransparentHintTextField(
                 text = offerState.text,
                 hint = offerState.hint,

@@ -23,49 +23,49 @@ class AddEditCandidateViewModel @Inject constructor(
 
     private val _candidateName = mutableStateOf(
         CandidateTextFieldState(
-            hint = "Name"
+            hint = "..."
         )
     )
     val candidateName: State<CandidateTextFieldState> = _candidateName
 
     private val _candidateJobTitle = mutableStateOf(
         CandidateTextFieldState(
-            hint = "Job Title"
+            hint = "..."
         )
     )
     val candidateJobTitle: State<CandidateTextFieldState> = _candidateJobTitle
 
     private val _candidateContact = mutableStateOf(
         CandidateTextFieldState(
-            hint = "Contact"
+            hint = "..."
         )
     )
     val candidateContact: State<CandidateTextFieldState> = _candidateContact
 
     private val _candidateLanguages = mutableStateOf(
         CandidateTextFieldState(
-            hint = "Languages"
+            hint = "..."
         )
     )
     val candidateLanguages: State<CandidateTextFieldState> = _candidateLanguages
 
     private val _candidateSalary = mutableStateOf(
         CandidateTextFieldState(
-            hint = "Salary"
+            hint = "..."
         )
     )
     val candidateSalary: State<CandidateTextFieldState> = _candidateSalary
 
     private val _candidateComments = mutableStateOf(
         CandidateTextFieldState(
-            hint = "Comments"
+            hint = "..."
         )
     )
     val candidateComments: State<CandidateTextFieldState> = _candidateComments
 
     private val _candidateOffer = mutableStateOf(
         CandidateTextFieldState(
-            hint = "Offer"
+            hint = "..."
         )
     )
     val candidateOffer: State<CandidateTextFieldState> = _candidateOffer
