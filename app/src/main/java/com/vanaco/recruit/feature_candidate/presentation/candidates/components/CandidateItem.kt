@@ -17,10 +17,12 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.ColorUtils
+import com.vanaco.recruit.core.util.TestTags
 import com.vanaco.recruit.feature_candidate.domain.model.Candidate
 
 @Composable
@@ -33,6 +35,7 @@ fun CandidateItem(
 ) {
     Box(
         modifier = modifier
+            .testTag(TestTags.CANDIDATE_ITEM)
     ) {
         Canvas(modifier = Modifier.matchParentSize()) {
             val clipPath = Path().apply {

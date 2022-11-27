@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.vanaco.recruit.core.util.TestTags
 import com.vanaco.recruit.feature_candidate.domain.model.Candidate
 import com.vanaco.recruit.feature_candidate.presentation.add_edit_candidate.components.TransparentHintTextField
 import kotlinx.coroutines.flow.collectLatest
@@ -132,7 +133,8 @@ fun AddEditCandidateScreen(
                 },
                 isHintVisible = nameState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.h4
+                textStyle = MaterialTheme.typography.h4,
+                testTag = TestTags.NAME_TEXT_FIELD
             )
             Spacer(modifier = Modifier.height(15.dp))
             Text(text = "Job Title:", color = Color.DarkGray)
@@ -146,7 +148,8 @@ fun AddEditCandidateScreen(
                     viewModel.onEvent(AddEditCandidateEvent.ChangeJobTitleFocus(it))
                 },
                 isHintVisible = jobTitleState.isHintVisible,
-                textStyle = MaterialTheme.typography.h5
+                textStyle = MaterialTheme.typography.h5,
+                testTag = TestTags.JOBTITLE_TEXT_FIELD
             )
             Spacer(modifier = Modifier.height(15.dp))
             Text(text = "Contact:", color = Color.DarkGray)
@@ -160,7 +163,8 @@ fun AddEditCandidateScreen(
                     viewModel.onEvent(AddEditCandidateEvent.ChangeContactFocus(it))
                 },
                 isHintVisible = contactState.isHintVisible,
-                textStyle = MaterialTheme.typography.h5
+                textStyle = MaterialTheme.typography.h5,
+                testTag = TestTags.CONTACT_TEXT_FIELD
             )
             Spacer(modifier = Modifier.height(15.dp))
             Text(text = "Languages:", color = Color.DarkGray)

@@ -13,9 +13,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.vanaco.recruit.core.util.TestTags
 import com.vanaco.recruit.feature_candidate.presentation.candidates.components.CandidateItem
 import com.vanaco.recruit.feature_candidate.presentation.candidates.components.OrderSection
 import com.vanaco.recruit.feature_candidate.presentation.util.Screen
@@ -77,7 +79,8 @@ fun CandidatesScreen(
                 OrderSection(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 16.dp),
+                        .padding(vertical = 16.dp)
+                        .testTag(TestTags.ORDER_SECTION),
                     candidateOrder = state.candidateOrder,
                     onOrderChange = {
                         viewModel.onEvent(CandidatesEvent.Order(it))
