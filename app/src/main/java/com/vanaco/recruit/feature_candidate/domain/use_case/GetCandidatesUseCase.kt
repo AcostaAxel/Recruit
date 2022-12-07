@@ -19,6 +19,7 @@ class GetCandidatesUseCase(
                 is OrderType.Ascending -> {
                     when (candidateOrder) {
                         is CandidateOrder.Name -> candidates.sortedBy { it.name.lowercase() }
+                        is CandidateOrder.JobTitle -> candidates.sortedBy { it.jobTitle.lowercase() }
                         is CandidateOrder.Date -> candidates.sortedBy { it.timestamp }
                         is CandidateOrder.Color -> candidates.sortedBy { it.color }
                     }
@@ -26,6 +27,7 @@ class GetCandidatesUseCase(
                 is OrderType.Descending -> {
                     when (candidateOrder) {
                         is CandidateOrder.Name -> candidates.sortedByDescending { it.name.lowercase() }
+                        is CandidateOrder.JobTitle -> candidates.sortedByDescending { it.jobTitle.lowercase() }
                         is CandidateOrder.Date -> candidates.sortedByDescending { it.timestamp }
                         is CandidateOrder.Color -> candidates.sortedByDescending { it.color }
                     }

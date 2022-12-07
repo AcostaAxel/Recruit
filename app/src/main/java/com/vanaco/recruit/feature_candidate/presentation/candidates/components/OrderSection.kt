@@ -27,6 +27,13 @@ fun OrderSection(
             Spacer(modifier = Modifier.width(8.dp))
 
             DefaultRadioButton(
+                text = "Job Title",
+                selected = candidateOrder is CandidateOrder.JobTitle,
+                onSelect = { onOrderChange(CandidateOrder.JobTitle(candidateOrder.orderType)) }
+            )
+            Spacer(modifier = Modifier.width(8.dp))
+
+            DefaultRadioButton(
                 text = "Date",
                 selected = candidateOrder is CandidateOrder.Date,
                 onSelect = { onOrderChange(CandidateOrder.Date(candidateOrder.orderType)) }
